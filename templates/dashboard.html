@@ -2,9 +2,7 @@
 {% load static %}
 
 <html lang="en">
-    {% for message in messages %}
-    <h2>{{message}}</h2>
-    {% endfor %}
+    
     <head>
         <meta charset="utf-8" />
         <title>Paper Generator and Moderator</title>
@@ -14,19 +12,19 @@
         <script src="{% static 'js/select.js' %}"></script>
 
     </head>
-
-
-
-
- 
         <div class="container">
         <body >
         
-
-
             <h1>Question Paper Generator and Moderator</h1>
-
+           
             <section class="field" id="field">
+                
+                <div>
+                    {% for message in messages %}
+                    <h2>{{message}}</h2>
+                    {% endfor %}
+                </div>
+                
                 <form action="{% url 'getdata' %}" method="GET">
                     {% csrf_token %}
                     <div class="full-marks">
